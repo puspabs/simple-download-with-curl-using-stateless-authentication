@@ -14,6 +14,10 @@
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true );
 	curl_setopt($ch, CURLOPT_SSLVERSION,3);
 	curl_setopt($ch, CURLOPT_POST, true );
+	
+	//to disable verify SSL validity, and set it to false  :)
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+	
 	curl_setopt($ch, CURLOPT_POSTFIELDS, 
     	http_build_query(array('token' => $tokenku,'file'=>$namafile))
     	);
